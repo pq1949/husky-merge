@@ -1,8 +1,11 @@
 {
   "name": "husky-merge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "merge husky hooks with existed hooks",
   "main": "index.js",
+  "bin": {
+    "husky-merge": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
