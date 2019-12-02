@@ -28,7 +28,7 @@ function isHuskyFile(filename) {
 }
 
 function fix(target, append) {
-  console.log(`begin to fix: ${target} ${append || ''}`);
+  console.log(`begin to fix: ${target} ${append || ""}`);
   const huskyHookFiles = getHooks(gitCommonDir).filter(hook =>
     isHuskyFile(hook)
   );
@@ -42,26 +42,26 @@ function fix(target, append) {
     const huskyScript = fs.readFileSync(huskyHookFiles[0], "utf-8");
     let mergedHookScript = "";
     if (append) {
-      mergedHookScript = `${originTargetHookScript}
+      mergedHookScript =
+`${originTargetHookScript}
 
-      # Merged at ${new Date().toLocaleString()}
+# Merged at ${new Date().toLocaleString()}
 
-      ${huskyScript}
-
-      `;
+${huskyScript}
+`;
     } else {
-      mergedHookScript = `${huskyScript}
+      mergedHookScript =
+`${originTargetHookScript}
 
-      # Merged at ${new Date().toLocaleString()}
+# Merged at ${new Date().toLocaleString()}
 
-      ${originTargetHookScript}
-
-      `;
+${huskyScript}
+`;
     }
     // console.log(mergedHookScript)
     fs.writeFileSync(targetHookFilePath, mergedHookScript, "utf-8");
     fs.chmodSync(targetHookFilePath, 0o0755);
-    console.log("husky-merge merge success: ", target, append);
+    console.log(`husky-merge merge success: ${target} ${append || ""}`);
   } else {
     console.log("husky-merge huskyHookFiles: ", huskyHookFiles);
     console.log("husky-merge originTargetHookScript: ", originTargetHookScript);
@@ -90,7 +90,6 @@ try {
   } else if (program.target) {
     fix(program.target, program.append);
   }
-
 } catch (err) {
   console.log("husky-merge merge error", err);
 }
