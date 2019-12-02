@@ -51,21 +51,17 @@ ${huskyScript}
 `;
     } else {
       mergedHookScript =
-`${originTargetHookScript}
+`${huskyScript}
 
 # Merged at ${new Date().toLocaleString()}
 
-${huskyScript}
+${originTargetHookScript}
 `;
     }
     // console.log(mergedHookScript)
     fs.writeFileSync(targetHookFilePath, mergedHookScript, "utf-8");
     fs.chmodSync(targetHookFilePath, 0o0755);
     console.log(`husky-merge merge success: ${target} ${append || ""}`);
-  } else {
-    console.log("husky-merge huskyHookFiles: ", huskyHookFiles);
-    console.log("husky-merge originTargetHookScript: ", originTargetHookScript);
-    console.log("husky-merge merge failed");
   }
 }
 
