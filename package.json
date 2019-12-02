@@ -1,6 +1,6 @@
 {
   "name": "husky-merge",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "merge husky hooks with existed hooks",
   "main": "index.js",
   "bin": {
