@@ -1,0 +1,25 @@
+{
+  "name": "husky-merge",
+  "version": "1.0.0",
+  "description": "merge husky hooks with existed hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pq1949/husky-merge.git"
+  },
+  "keywords": [],
+  "author": "pq1949",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pq1949/husky-merge/issues"
+  },
+  "homepage": "https://github.com/pq1949/husky-merge#readme",
+  "dependencies": {
+    "commander": "^4.0.1",
+    "execa": "^3.3.0",
+    "slash": "^3.0.0"
+  }
+}
