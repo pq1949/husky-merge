@@ -28,7 +28,7 @@ function isHuskyFile(filename) {
 }
 
 function fix(target, append) {
-  console.log("begin to fix: ", target, append);
+  console.log(`begin to fix: ${target} ${append || ''}`);
   const huskyHookFiles = getHooks(gitCommonDir).filter(hook =>
     isHuskyFile(hook)
   );

@@ -29,6 +29,7 @@ function gitRevParse() {
 
 // husky/lib/installer/is @3.1.0
 function isHusky(data) {
+  const huskyIdentifier = '# husky'
   // Husky v0.14 and prior used #husky as an identifier.
   // Just in case some previous hooks weren't correctly uninstalled,
   // and for a better transition this will allow v0.15+ to uninstall them as well.
